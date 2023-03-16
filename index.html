@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-gap: 5px;
+      }
+      
+      .grid-item {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- grid items go here -->
+    </div>
+    
+    <script>
+      const gridContainer = document.querySelector(".grid-container");
+      const imageFolder = "path/to/images/folder";
+      
+      for (let i = 1; i <= 60; i++) {
+        const gridItem = document.createElement("div");
+        gridItem.classList.add("grid-item");
+        
+        const image = document.createElement("img");
+        image.src = `${imageFolder}/image-${i}.jpg`;
+        
+        gridItem.appendChild(image);
+        gridContainer.appendChild(gridItem);
+      }
+    </script>
+  </body>
+</html>
